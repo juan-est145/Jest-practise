@@ -1,5 +1,6 @@
 const { capitalize } = require("./functions");
 
+//Capitalize tests
 test("Capitalize simple case", () => {
 	expect(capitalize("hola")).toBe("Hola");
 });
@@ -15,3 +16,5 @@ test("Capitalize empty", () => {
 test("Capitalize non string", () => {
 	expect(capitalize(42)).toBe(42);
 });
+
+//Reverse tests
