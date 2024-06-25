@@ -1,0 +1,1 @@
+exports.Capitalize = this.Capitalize;

@@ -1,0 +1,1 @@
+const capitalize = require("./functions")
