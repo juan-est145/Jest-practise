@@ -37,7 +37,7 @@ function caesarCipher(string, shiftFactor = 1) {
 	if (string === undefined || string.length === 0 || typeof string !== "string")
 		return (string);
 	const letters = "abcdefghijklmnopqrstuvwxyz";
-	let result = [];
+	const result = [];
 	for (let i = 0; i < string.length; i++) {
 		if (!string[i].match(/[a-z]/i)) {
 			result[i] = string[i];
