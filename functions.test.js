@@ -64,3 +64,14 @@ test("Basic multiplication", () => {
 	expect(calcObject.multiply("2.25", "6.40")).toBe(14.4);
 	expect(calcObject.multiply("-2.25", "6.40")).toBe(-14.4);
 });
+
+test("Basic division", () => {
+	expect(calcObject.divide(4, 4)).toBe(1);
+	expect(calcObject.divide("4", "4")).toBe(1);
+	expect(calcObject.divide("4", 3)).toBe(1.3333333333333333);
+	expect(calcObject.divide("Joda", "Otro")).toBe(null);
+	expect(calcObject.divide(2.25, 6.40)).toBe(0.3515625);
+	expect(calcObject.divide("2.25", "6.40")).toBe(0.3515625);
+	expect(calcObject.divide("-2.25", "6.40")).toBe(-0.3515625);
+	expect(calcObject.divide(10, 0)).toBe(null);
+});
