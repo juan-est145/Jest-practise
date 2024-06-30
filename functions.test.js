@@ -1,4 +1,4 @@
-const { capitalize, reverse } = require("./functions");
+const { capitalize, reverse, calcObject } = require("./functions");
 
 //Capitalize tests
 test("Capitalize simple case", () => {
@@ -32,4 +32,12 @@ test("Reverse another longer sentence", () => {
 
 test("Reverse empty", () => {
 	expect(reverse("")).toBe("");
+});
+
+//Calculator test
+
+test("Basic addition", () => {
+	expect(calcObject.add(4, 4)).toBe(8);
+	expect(calcObject.add("4", "4")).toBe(8);
+	expect(calcObject.add("4", 3)).toBe(7);
 });
