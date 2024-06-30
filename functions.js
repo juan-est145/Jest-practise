@@ -21,6 +21,11 @@ class calculator {
 			return (null);
 		return (parseFloat(number1) - parseFloat(number2));
 	}
+	multiply(number1, number2) {
+		if (isNaN(parseFloat(number1)) || isNaN(parseFloat(number2)))
+			return (null);
+		return (parseFloat(number1) * parseFloat(number2));
+	}
 }
 
 const calcObject = new calculator();

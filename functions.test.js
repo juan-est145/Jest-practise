@@ -54,3 +54,13 @@ test("Basic substraction", () => {
 	expect(calcObject.substract("2.25", "6.40")).toBe(-4.15);
 	expect(calcObject.substract("-2.25", "6.40")).toBe(-8.65);
 });
+
+test("Basic multiplication", () => {
+	expect(calcObject.multiply(4, 4)).toBe(16);
+	expect(calcObject.multiply("4", "4")).toBe(16);
+	expect(calcObject.multiply("4", 3)).toBe(12);
+	expect(calcObject.multiply("Joda", "Otro")).toBe(null);
+	expect(calcObject.multiply(2.25, 6.40)).toBe(14.4);
+	expect(calcObject.multiply("2.25", "6.40")).toBe(14.4);
+	expect(calcObject.multiply("-2.25", "6.40")).toBe(-14.4);
+});
