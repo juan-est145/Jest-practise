@@ -33,10 +33,31 @@ class calculator {
 	}
 }
 
+function caesarCipher(string, shiftFactor = 1) {
+	if (string === undefined || string.length === 0 || typeof string !== "string")
+		return (string);
+	const letters = "abcdefghijklmnopqrstuvwxyz";
+	let result = [];
+	for (let i = 0; i < string.length; i++) {
+		if (!string[i].match(/[a-z]/i)) {
+			result[i] = string[i];
+			continue;
+		}
+		let index = (((string[i].toLowerCase()).charCodeAt(0) - 'a'.charCodeAt(0)) + shiftFactor) % letters.length;
+		result[i] = letters[index];
+		if (string[i].toUpperCase() === string[i])
+			result[i] = result[i].toUpperCase();
+	}
+	return (result.join(""));
+}
+
+caesarCipher("Hello", 3);
+
 const calcObject = new calculator();
 
 module.exports = {
 	capitalize,
 	reverse,
-	calcObject
+	calcObject,
+	caesarCipher
 };

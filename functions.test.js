@@ -1,4 +1,4 @@
-const { capitalize, reverse, calcObject } = require("./functions");
+const { capitalize, reverse, calcObject, caesarCipher } = require("./functions");
 
 //Capitalize tests
 test("Capitalize simple case", () => {
@@ -74,4 +74,15 @@ test("Basic division", () => {
 	expect(calcObject.divide("2.25", "6.40")).toBe(0.3515625);
 	expect(calcObject.divide("-2.25", "6.40")).toBe(-0.3515625);
 	expect(calcObject.divide(10, 0)).toBe(null);
+});
+
+//Caesar cipher tests
+test("Caesar cipher simple conversion", () =>
+{
+	expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+});
+
+test("Caesar cipher wrap test", () =>
+{
+	expect(caesarCipher("xyz", 3)).toBe("abc");
 });
