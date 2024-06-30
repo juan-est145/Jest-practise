@@ -50,11 +50,18 @@ function caesarCipher(string, shiftFactor = 1) {
 	return (result.join(""));
 }
 
-function analyzeArray(arrayOfNumbers) {
-	if (!Array.isArray(arrayOfNumbers) || !arrayOfNumbers.every(Number.isFinite))
+function analyzeArray (arrayOfNumbers) {
+	if (!Array.isArray(arrayOfNumbers) || !arrayOfNumbers.every(Number.isFinite) || arrayOfNumbers.length === 0)
 		return (null);
-	return (true);
+	arrayOfNumbers.sort((a, b) => a - b)
+	let length = arrayOfNumbers.length;
+	let average = (arrayOfNumbers.reduce((prev, current) => prev + current, 0)) / length;
+	let min = arrayOfNumbers[0];
+	let max = arrayOfNumbers[length - 1];
+	return ({average, min, max, length});
 }
+
+analyzeArray([7, 8, 6]);
 
 const calcObject = new calculator();
 

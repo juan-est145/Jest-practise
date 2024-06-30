@@ -124,6 +124,12 @@ describe("Analyze array", () => {
 	});
 
 	test("Analyze basic array", () => {
-		expect(analyzeArray([4, -9, 356])).toBe(true);
+		expect(analyzeArray([4, -9, 356])).toMatchObject(
+			{
+				"average": 117,
+				"min": -9,
+				"max": 356,
+				"length" : 3
+			});
 	});
 });
