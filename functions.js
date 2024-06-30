@@ -53,15 +53,14 @@ function caesarCipher(string, shiftFactor = 1) {
 function analyzeArray (arrayOfNumbers) {
 	if (!Array.isArray(arrayOfNumbers) || !arrayOfNumbers.every(Number.isFinite) || arrayOfNumbers.length === 0)
 		return (null);
-	arrayOfNumbers.sort((a, b) => a - b)
-	let length = arrayOfNumbers.length;
-	let average = (arrayOfNumbers.reduce((prev, current) => prev + current, 0)) / length;
-	let min = arrayOfNumbers[0];
-	let max = arrayOfNumbers[length - 1];
+	const arrayCopy = arrayOfNumbers.map((a) => a);
+	arrayCopy.sort((a, b) => a - b)
+	let length = arrayCopy.length;
+	let average = (arrayCopy.reduce((prev, current) => prev + current, 0)) / length;
+	let min = arrayCopy[0];
+	let max = arrayCopy[length - 1];
 	return ({average, min, max, length});
 }
-
-analyzeArray([7, 8, 6]);
 
 const calcObject = new calculator();
 
