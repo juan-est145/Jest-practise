@@ -1,4 +1,4 @@
-const { capitalize } = require("./functions");
+const { capitalize, reverse } = require("./functions");
 
 //Capitalize tests
 test("Capitalize simple case", () => {
@@ -18,3 +18,18 @@ test("Capitalize non string", () => {
 });
 
 //Reverse tests
+test("Reverse normal string", () => {
+	expect(reverse("Hola")).toBe("aloH");
+});
+
+test("Reverse longer sentence", () => {
+	expect(reverse("Hola caracola")).toBe("alocarac aloH");
+});
+
+test("Reverse another longer sentence", () => {
+	expect(reverse("hello there")).toBe("ereht olleh");
+});
+
+test("Reverse empty", () => {
+	expect(reverse("")).toBe("");
+});
