@@ -39,10 +39,9 @@ function caesarCipher(string, shiftFactor = 1) {
 	const letters = "abcdefghijklmnopqrstuvwxyz";
 	const result = [];
 	for (let i = 0; i < string.length; i++) {
-		if (!string[i].match(/[a-z]/i)) {
-			result[i] = string[i];
+		result[i] = string[i];
+		if (!string[i].match(/[a-z]/i))
 			continue;
-		}
 		let index = (((string[i].toLowerCase()).charCodeAt(0) - 'a'.charCodeAt(0)) + shiftFactor) % letters.length;
 		result[i] = letters[index];
 		if (string[i].toUpperCase() === string[i])
