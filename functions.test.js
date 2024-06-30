@@ -35,9 +35,12 @@ test("Reverse empty", () => {
 });
 
 //Calculator test
-
 test("Basic addition", () => {
 	expect(calcObject.add(4, 4)).toBe(8);
 	expect(calcObject.add("4", "4")).toBe(8);
 	expect(calcObject.add("4", 3)).toBe(7);
+	expect(calcObject.add("Joda", "Otro")).toBe(null);
+	expect(calcObject.add(2.25, 6.40)).toBe(8.65);
+	expect(calcObject.add("2.25", "6.40")).toBe(8.65);
+	expect(calcObject.add("-2.25", "6.40")).toBe(4.15);
 });

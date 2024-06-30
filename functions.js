@@ -12,11 +12,11 @@ function reverse(string) {
 
 class calculator {
 	add(number1, number2) {
-		if (typeof parseFloat(number1) !== "number" || typeof parseFloat(number2) !== "number")
+		if (isNaN(parseFloat(number1)) || isNaN(parseFloat(number2)))
 			return (null);
 		return (parseFloat(number1) + parseFloat(number2));
 	}
-	
+
 }
 
 const calcObject = new calculator();
