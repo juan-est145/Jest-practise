@@ -50,7 +50,11 @@ function caesarCipher(string, shiftFactor = 1) {
 	return (result.join(""));
 }
 
-caesarCipher("ABC", -1);
+function analyzeArray(arrayOfNumbers) {
+	if (!Array.isArray(arrayOfNumbers) || !arrayOfNumbers.every(Number.isFinite))
+		return (null);
+	return (true);
+}
 
 const calcObject = new calculator();
 
@@ -58,5 +62,6 @@ module.exports = {
 	capitalize,
 	reverse,
 	calcObject,
-	caesarCipher
+	caesarCipher,
+	analyzeArray
 };
