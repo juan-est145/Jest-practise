@@ -86,3 +86,21 @@ test("Caesar cipher wrap test", () =>
 {
 	expect(caesarCipher("xyz", 3)).toBe("abc");
 });
+
+test("Caesar cipher complete sentence test", () => 
+{
+	expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("Caesar cipher no shift factor", () => {
+	expect(caesarCipher("ABC")).toBe("BCD");
+});
+
+test("Caesar cipher negative shift", () => {
+	expect(caesarCipher("ABC", -1)).toBe("ABC");
+});
+
+test("Caesar cipher no text", () =>
+{
+	expect(caesarCipher("", 5)).toBe("");
+});

@@ -34,7 +34,7 @@ class calculator {
 }
 
 function caesarCipher(string, shiftFactor = 1) {
-	if (string === undefined || string.length === 0 || typeof string !== "string")
+	if (string === undefined || string.length === 0 || typeof string !== "string" || shiftFactor <= 0)
 		return (string);
 	const letters = "abcdefghijklmnopqrstuvwxyz";
 	const result = [];
@@ -51,7 +51,7 @@ function caesarCipher(string, shiftFactor = 1) {
 	return (result.join(""));
 }
 
-caesarCipher("Hello", 3);
+caesarCipher("ABC", -1);
 
 const calcObject = new calculator();
 
